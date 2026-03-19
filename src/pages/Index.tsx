@@ -74,7 +74,7 @@ export default function Index() {
 
                 <div className="mt-8 flex flex-col items-center text-center">
                   <img
-                    src="public/acaro-logo.png"
+                    src="public/acaro-logo.png.png"
                     alt="ACARO"
                     className="h-36 w-auto object-contain sm:h-44 md:h-48"
                   />
