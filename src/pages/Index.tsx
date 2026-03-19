@@ -74,7 +74,7 @@ export default function Index() {
 
                 <div className="mt-8 flex flex-col items-center text-center">
                   <img
-                    src="public/acaro-logo.png.png"
+                    src="/acaro-logo.png.png"
                     alt="ACARO"
                     className="h-36 w-auto object-contain sm:h-44 md:h-48"
                   />
@@ -119,11 +119,11 @@ export default function Index() {
                           <div className="flex min-w-0 items-start gap-4 sm:gap-5">
                             <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[24px] border border-[#ebe6dc] bg-[#fffdfa] p-3 sm:h-24 sm:w-24">
                               <img
-                                src={survey.logo_url && survey.logo_url.trim() ? survey.logo_url : '/acaro-logo.png'}
+                                src={survey.logo_url && survey.logo_url.trim() ? survey.logo_url : '/acaro-logo.png.png'}
                                 alt={`Logo de ${survey.titulo}`}
                                 className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
                                 onError={(e) => {
-                                  e.currentTarget.src = '/acaro-logo.png';
+                                  e.currentTarget.src = '/acaro-logo.png.png';
                                 }}
                               />
                             </div>
