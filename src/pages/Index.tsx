@@ -60,12 +60,12 @@ export default function Index() {
           </div>
 
           <div className="relative border-b border-[#f0eadf] px-6 pb-8 pt-4 sm:px-10 sm:pb-10 sm:pt-5">
-            <div className="grid gap-8 lg:grid-cols-[1fr_340px] lg:items-start">
+            <div className="grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
-                className="max-w-3xl"
+                className="min-w-0"
               >
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#e8dfd1] bg-[#fcfaf6] px-4 py-2 text-sm font-medium text-[#6e4f33]">
                   <ShieldCheck className="h-4 w-4 text-[#306131]" />
@@ -73,14 +73,20 @@ export default function Index() {
                 </div>
 
                 <div className="mt-6 flex items-center gap-4">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-[#ece4d8] bg-white p-3 shadow-sm sm:h-24 sm:w-24">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#ece4d8] bg-white p-3 shadow-sm sm:h-24 sm:w-24">
                     <img src="/acaro-logo.png" alt="ACARO" className="h-full w-full object-contain" />
                   </div>
 
                   <div className="hidden h-16 w-px bg-[#ece4d8] sm:block" />
+
+                  <div className="min-w-0">
+                    <p className="text-sm leading-7 text-[#7b6c5f] sm:text-base">
+                      Seleccione el formulario disponible para completar.
+                    </p>
+                  </div>
                 </div>
 
-                <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-[#2f241c] sm:text-5xl">
+                <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#2f241c] sm:text-5xl">
                   Seleccione la encuesta a responder
                 </h1>
               </motion.div>
@@ -91,7 +97,7 @@ export default function Index() {
                 transition={{ duration: 0.45, delay: 0.08 }}
                 className="w-full"
               >
-                <div className="rounded-[28px] border border-[#ebe6dc] bg-[#fffdfa] p-6 min-h-[150px]">
+                <div className="rounded-[28px] border border-[#ebe6dc] bg-[#fffdfa] p-6">
                   <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f1e7d0] text-[#6e4f33]">
                     <ClipboardList className="h-5 w-5" />
                   </div>
