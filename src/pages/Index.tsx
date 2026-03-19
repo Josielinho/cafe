@@ -78,11 +78,6 @@ export default function Index() {
                   </div>
 
                   <div className="hidden h-16 w-px bg-[#ece4d8] sm:block" />
-
-                  <p className="max-w-md text-sm leading-7 text-[#7b6c5f] sm:text-base">
-                    Seleccione el formulario que desea completar. La experiencia fue ajustada para verse más limpia,
-                    moderna y agradable en celular y escritorio.
-                  </p>
                 </div>
 
                 <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-[#2f241c] sm:text-5xl">
