@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 18% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 18% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 18% 16%;
+
+    --primary: 122 34% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 39 42% 94%;
+    --secondary-foreground: 24 18% 16%;
+
+    --muted: 34 29% 97%;
+    --muted-foreground: 24 12% 44%;
+
+    --accent: 40 40% 49%;
+    --accent-foreground: 24 18% 16%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 31% 89%;
+    --input: 36 31% 89%;
+    --ring: 122 34% 29%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(176, 143, 75, 0.10) 0%, rgba(255, 255, 255, 0) 28%),
+      radial-gradient(circle at top right, rgba(48, 97, 49, 0.08) 0%, rgba(255, 255, 255, 0) 22%),
+      linear-gradient(to bottom, #faf9f6, #f7f7f3 52%, #f5f4ef 100%);
+  }
+
+  ::selection {
+    background: rgba(176, 143, 75, 0.22);
+    color: #2f241c;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
