@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ClipboardList, LoaderCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, LoaderCircle, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fetchPublishedSurveys } from '../services/surveyService';
 
@@ -60,7 +60,7 @@ export default function Index() {
           </div>
 
           <div className="relative border-b border-[#f0eadf] px-6 pb-8 pt-4 sm:px-10 sm:pb-10 sm:pt-5">
-            <div className="grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
+            <div className="grid gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,43 +72,16 @@ export default function Index() {
                   Plataforma de encuestas
                 </div>
 
-                <div className="mt-6 flex items-center gap-4">
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#ece4d8] bg-white p-3 shadow-sm sm:h-24 sm:w-24">
-                    <img src="/acaro-logo.png" alt="ACARO" className="h-full w-full object-contain" />
-                  </div>
+                <div className="mt-8 flex flex-col items-center text-center">
+                  <img
+                    src="public/acaro-logo.png.png"
+                    alt="ACARO"
+                    className="h-36 w-auto object-contain sm:h-44 md:h-48"
+                  />
 
-                  <div className="hidden h-16 w-px bg-[#ece4d8] sm:block" />
-
-                  <div className="min-w-0">
-                    <p className="text-sm leading-7 text-[#7b6c5f] sm:text-base">
-                      Seleccione el formulario disponible para completar.
-                    </p>
-                  </div>
-                </div>
-
-                <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#2f241c] sm:text-5xl">
-                  Seleccione la encuesta a responder
-                </h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.08 }}
-                className="w-full"
-              >
-                <div className="rounded-[28px] border border-[#ebe6dc] bg-[#fffdfa] p-6">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f1e7d0] text-[#6e4f33]">
-                    <ClipboardList className="h-5 w-5" />
-                  </div>
-
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8f7f72]">
-                    Disponibles
-                  </p>
-
-                  <p className="mt-3 text-5xl font-semibold leading-none text-[#2f241c]">
-                    {surveys.length}
-                  </p>
+                  <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#2f241c] sm:text-5xl">
+                    Seleccione la encuesta a responder
+                  </h1>
                 </div>
               </motion.div>
             </div>
@@ -146,9 +119,12 @@ export default function Index() {
                           <div className="flex min-w-0 items-start gap-4 sm:gap-5">
                             <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[24px] border border-[#ebe6dc] bg-[#fffdfa] p-3 sm:h-24 sm:w-24">
                               <img
-                                src={survey.logo_url || '/acaro-logo.png'}
+                                src={survey.logo_url && survey.logo_url.trim() ? survey.logo_url : '/acaro-logo.png'}
                                 alt={`Logo de ${survey.titulo}`}
                                 className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                                onError={(e) => {
+                                  e.currentTarget.src = '/acaro-logo.png';
+                                }}
                               />
                             </div>
 
